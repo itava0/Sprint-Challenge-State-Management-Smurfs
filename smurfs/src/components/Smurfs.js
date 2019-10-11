@@ -6,7 +6,7 @@ import SmurfsLists from "./SmufsLists";
 const Smurfs = props => {
   useEffect(() => {
     props.fetchSmurfs();
-  }, []);
+  },[]);
 
   if (props.isFetching) {
     // usually a spinner (react-loader-spinner)

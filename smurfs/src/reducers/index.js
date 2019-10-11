@@ -1,9 +1,17 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POST, POST_SUCESS, POST_FAILURE  } from '../actions';
+import {
+  START_FETCHING,
+  FETCH_SUCCESS,
+  FETCH_FAILURE,
+  START_POST,
+  POST_SUCESS,
+  POST_FAILURE,
+  DELETE_SUCESS
+} from "../actions";
 
 const initialState = {
   smurfs: [],
   isFetching: false,
-  error: ''
+  error: ""
 };
 
 export const reducer = (state = initialState, action) => {
@@ -12,13 +20,13 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: ''
+        error: ""
       };
     case FETCH_SUCCESS:
       return {
         ...state,
         isFetching: false,
-        error: '',
+        error: "",
         smurfs: action.payload
       };
     case FETCH_FAILURE:
@@ -27,24 +35,37 @@ export const reducer = (state = initialState, action) => {
         error: action.payload,
         isFetching: false
       };
-    case START_POST: 
+    case START_POST:
       return {
         ...state,
         isFetching: false,
-        error: ''
-      }
-    case POST_SUCESS: 
+        error: ""
+      };
+    case POST_SUCESS:
       return {
         ...state,
         isFetching: false,
-        smurfs:[...state.smurfs, ...action.payload]
-      }
+        smurfs: [...state.smurfs, ...action.payload]
+      };
     case POST_FAILURE:
       return {
         ...state,
         error: action.payload,
         isFetching: false
-      }
+      };
+    case DELETE_SUCESS:
+      return state.filter(smurfs => {
+        if (smurfs.id === action.payload) {
+          return {
+            ...state,
+            smurfs: {
+              name: "",
+              age: "",
+              height: ""
+            }
+          };
+        }
+      });
     default:
       return state;
   }
