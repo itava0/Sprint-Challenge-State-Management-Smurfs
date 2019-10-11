@@ -1,28 +1,74 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #B2FEFA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+i {
+  margin-left: 221px;
 }
 
-.App-intro {
-  font-size: large;
+.App {
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  padding: 32px;
+  letter-spacing: 2px
+}
+.members {
+  display: flex;
+  flex-wrap: wrap;
+}
+.person {
+  background: #00f2fe;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  margin: 16px auto;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
+
+input, textarea {
+  width: 200px;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;  
+  border: 1px solid #4facfe;
+  border-radius: 4px;
+}
+button {
+  background: #00f2fe;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #191919;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.12), 0 2px 2px 1px rgba(0, 0, 0, 0.24);
+  transition: all 0.2 ease-in;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.12), 0 2px 3px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+
+
