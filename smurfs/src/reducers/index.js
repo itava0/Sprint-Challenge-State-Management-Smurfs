@@ -1,4 +1,4 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from '../actions';
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE, START_POST, POST_SUCESS, POST_FAILURE  } from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -27,6 +27,24 @@ export const reducer = (state = initialState, action) => {
         error: action.payload,
         isFetching: false
       };
+    case START_POST: 
+      return {
+        ...state,
+        isFetching: false,
+        error: ''
+      }
+    case POST_SUCESS: 
+      return {
+        ...state,
+        isFetching: false,
+        smurfs:[...state.smurfs, ...action.payload]
+      }
+    case POST_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false
+      }
     default:
       return state;
   }
