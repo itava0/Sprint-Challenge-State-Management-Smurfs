@@ -14,7 +14,7 @@ const Smurfs = props => {
   }
 
   return (
-    <div>
+    <div className="members">
       {props.error && <p>{props.error}</p>}
       {props.smurfs.map(item => (
         <SmurfsLists key={item.id} item={item} />
